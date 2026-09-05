@@ -30,7 +30,7 @@ const projects = [
     image: "https://private-user-images.githubusercontent.com/262513183/567427443-cf8abee2-b99f-44f2-9c54-60d5dcc0eca8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODg1MDkwNDAsIm5iZiI6MTc4ODUwODc0MCwicGF0aCI6Ii8yNjI1MTMxODMvNTY3NDI3NDQzLWNmOGFiZWUyLWI5OWYtNDRmMi05YzU0LTYwZDVkY2MwZWNhOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwNFQwNzU5MDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YmM2Y2Y2ZTFmODZiNDVjNWM1NGMyYzE2MDUyZDkwODBiMTkxMzliOWI1MWZjNmEyNDBmYzhkMjRjNzIwZmUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.GipgWLEg_vz2554y75YSdXllyp8wNV1XaKBUzvseLSo",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/Alok-Jha-creator",
-    live: "https://yoursite.netlify.app",
+    live: "https://github.com/Alok-Jha-creator",
     accent: "#00bf9f",
     size: "small",
   },
@@ -56,7 +56,7 @@ const projects = [
     image: "https://private-user-images.githubusercontent.com/262513183/557710997-7a1a04f1-25b2-43a9-85c4-b137c6706a60.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODg1MDg3MzAsIm5iZiI6MTc4ODUwODQzMCwicGF0aCI6Ii8yNjI1MTMxODMvNTU3NzEwOTk3LTdhMWEwNGYxLTI1YjItNDNhOS04NWM0LWIxMzdjNjcwNmE2MC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwNFQwNzUzNTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hOTdmODMzZjczZDU3MTg1YjlmYzRjYjQ2MTEyNWU4ZmVmMTZlOGM1ZjQ3MDAxMDY5ZDI3NTQ2ZTQ3OWQ5MzlkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.TgyPGteqLkNfmBGanIlxagUbXldXXsc0GXOJzOpLkIk", // replace with: proj3
     tags: ["React.js", "Firebase", "Context API", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator",
-    live: "https://yoursite.netlify.app",
+     //live: "https://yoursite.netlify.app",
     accent: "#a78bfa",
     size: "small",
   },
@@ -81,7 +81,7 @@ const ExternalIcon = () => (
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
 
-  const isLarge = project.size === "large";
+  const isLarge = project.size === "small" ? false : true;
 
   return (
     <motion.div
