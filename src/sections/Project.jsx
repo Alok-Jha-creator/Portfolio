@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import online from "../assets/online.png";
 
 // ── Replace these image imports with your actual screenshot imports ────────────
 // import proj1 from "../assets/projects/proj1.png";
@@ -40,7 +41,7 @@ const projects = [
     subtitle: "Full Stack App",
     description:
       "A full-featured task management app with drag-and-drop, real-time updates, user auth, and deadline reminders. Built with Next.js, Firebase, and Context API.",
-    image: "https://private-user-images.githubusercontent.com/262513183/558274112-ec0d6233-fc8e-4d53-93d1-c769f66770e0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODg1MDg4NTcsIm5iZiI6MTc4ODUwODU1NywicGF0aCI6Ii8yNjI1MTMxODMvNTU4Mjc0MTEyLWVjMGQ2MjMzLWZjOGUtNGQ1My05M2QxLWM3NjlmNjY3NzBlMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwNFQwNzU1NTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iYzIxMmIzMTU1NjcyNzljZDczMGM4NWMzMDM3Y2ZmZDY2ZWVmMjEwYzZlNTY0MTBmYTNmN2I2MWE0ZWZlMDdmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.gf17D424hefaNaoyFoxVhVQUgyfvoDAhk6ZzCl51MiY", // replace with: proj3
+    image: online,
     tags: ["Next.js", "Firebase", "Context API", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator",
     live: "https://yoursite.netlify.app",
