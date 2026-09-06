@@ -5,12 +5,7 @@ import { image } from "framer-motion/client";
 import image1 from "../assets/image.png";
 import room from "../assets/room.png";
 
-// ── Replace these image imports with your actual screenshot imports ────────────
-// import proj1 from "../assets/projects/proj1.png";
-// import proj2 from "../assets/projects/proj2.png";
-// import proj3 from "../assets/projects/proj3.png";
 
-// ── Project data — replace with your real info ────────────────────────────────
 const projects = [
   {
     id: 1,
