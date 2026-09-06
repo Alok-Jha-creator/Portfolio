@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import online from "../assets/online.png";
+import { image } from "framer-motion/client";
+import image1 from "../assets/image.png";
+import room from "../assets/room.png";
 
 // ── Replace these image imports with your actual screenshot imports ────────────
 // import proj1 from "../assets/projects/proj1.png";
@@ -15,7 +18,7 @@ const projects = [
     subtitle: "Full Stack Web App",
     description:
       "A modern e-commerce platform with product listing, cart management, secure JWT authentication, and real-time order tracking. Built with React, Node.js, Express, and MongoDB.",
-    image: "https://private-user-images.githubusercontent.com/262513183/557706575-50b3fb1e-cdaf-4232-b0cb-57ca2c44cdf2.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODg1MDkxNDYsIm5iZiI6MTc4ODUwODg0NiwicGF0aCI6Ii8yNjI1MTMxODMvNTU3NzA2NTc1LTUwYjNmYjFlLWNkYWYtNDIzMi1iMGNiLTU3Y2EyYzQ0Y2RmMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwNFQwODAwNDZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hOGVhZWRiYzkzN2Q2MjYzZTUyM2UwZWViNDExY2I3MGIxZjE1YjJjYTkxMGI0Y2MwYTc4MDlkY2YyZjMwNzJiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.73FpSCl6qfWqO0nZMYAXIOITwKhxQFfGDkZI0L5kup4", // replace with: proj1
+    image:room,
     tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
     github: "https://github.com/Alok-Jha-creator",
     live: "https://yoursite.netlify.app",
@@ -54,7 +57,7 @@ const projects = [
     subtitle: "FullStack App",
     description:
       "A full-featured task management app with drag-and-drop, real-time updates, user auth, and deadline reminders. Built with Next.js, Firebase, and Context API.",
-    image: "https://private-user-images.githubusercontent.com/262513183/557710997-7a1a04f1-25b2-43a9-85c4-b137c6706a60.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODg1MDg3MzAsIm5iZiI6MTc4ODUwODQzMCwicGF0aCI6Ii8yNjI1MTMxODMvNTU3NzEwOTk3LTdhMWEwNGYxLTI1YjItNDNhOS04NWM0LWIxMzdjNjcwNmE2MC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwNFQwNzUzNTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hOTdmODMzZjczZDU3MTg1YjlmYzRjYjQ2MTEyNWU4ZmVmMTZlOGM1ZjQ3MDAxMDY5ZDI3NTQ2ZTQ3OWQ5MzlkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.TgyPGteqLkNfmBGanIlxagUbXldXXsc0GXOJzOpLkIk", // replace with: proj3
+    image: image1,
     tags: ["React.js", "Firebase", "Context API", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator",
      //live: "https://yoursite.netlify.app",
