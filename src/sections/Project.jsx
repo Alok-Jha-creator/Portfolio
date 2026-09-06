@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import online from "../assets/online.png";
-import { image } from "framer-motion/client";
 import image1 from "../assets/image.png";
 import room from "../assets/room.png";
+import port from "../assets/port.png";
 
 
 const projects = [
@@ -26,7 +26,7 @@ const projects = [
     subtitle: "Frontend Project",
     description:
       "Personal developer portfolio with smooth animations, particle backgrounds, and fully responsive design using React, Tailwind CSS, and Framer Motion.",
-    image: "https://private-user-images.githubusercontent.com/262513183/567427443-cf8abee2-b99f-44f2-9c54-60d5dcc0eca8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODg1MDkwNDAsIm5iZiI6MTc4ODUwODc0MCwicGF0aCI6Ii8yNjI1MTMxODMvNTY3NDI3NDQzLWNmOGFiZWUyLWI5OWYtNDRmMi05YzU0LTYwZDVkY2MwZWNhOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwNFQwNzU5MDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YmM2Y2Y2ZTFmODZiNDVjNWM1NGMyYzE2MDUyZDkwODBiMTkxMzliOWI1MWZjNmEyNDBmYzhkMjRjNzIwZmUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.GipgWLEg_vz2554y75YSdXllyp8wNV1XaKBUzvseLSo",
+    image: port,
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/Alok-Jha-creator",
     live: "https://github.com/Alok-Jha-creator",
