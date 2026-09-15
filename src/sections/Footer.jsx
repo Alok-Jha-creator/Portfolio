@@ -24,7 +24,6 @@ const navLinks = [
   { label: "About",       href: "#about" },
   { label: "Skills",      href: "#skills" },
   { label: "Projects",    href: "#projects" },
-  { label: "Experience",  href: "#experience" },
   { label: "Contact",     href: "#contact" },
 ];
 
@@ -79,7 +78,7 @@ export default function Footer() {
             <h2
               className="text-5xl sm:text-6xl font-black leading-none bg-clip-text text-transparent bg-gradient-to-br from-[#1CD8D2] via-[#00bf8f] to-white tracking-tight"
             >
-              Alok<br />Jha.
+              Alok Jha
             </h2>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Full Stack Developer crafting scalable, modern apps — from robust APIs to pixel-perfect UIs.
@@ -133,10 +132,10 @@ export default function Footer() {
           <motion.div variants={fadeUp} className="flex flex-col gap-5 justify-between">
             <div>
               <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1CD8D2] mb-3">
-                Mantra
+                 Life Principle
               </p>
               <blockquote className="text-white/80 italic text-base leading-relaxed border-l-2 border-[#1CD8D2] pl-4">
-                "Success is when preparation meets opportunity."
+              “Small steps, taken consistently, create extraordinary results.”
               </blockquote>
             </div>
 
