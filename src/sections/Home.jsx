@@ -188,7 +188,7 @@ const Home = React.forwardRef((props, ref) => {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Alok Jha
+                Alok Jha2
               </span>
             </motion.h1>
 
