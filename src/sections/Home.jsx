@@ -195,9 +195,9 @@ const Home = React.forwardRef((props, ref) => {
             {/* ── DESCRIPTION ── */}
             <motion.p
               className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0"
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
               style={{
                 transform: "translateZ(20px)",
                 transformStyle: "preserve-3d",
