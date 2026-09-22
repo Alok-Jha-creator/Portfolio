@@ -9,7 +9,6 @@ const Navbar = () => {
   const [forceVisible, setForceVisible] = useState(false)
   const lastScrollY = useRef(0)
   const timerId = useRef(null)
-
   useEffect(() => {
     const homeSection = document.querySelector("#Home")
     const observer = new IntersectionObserver(
@@ -28,7 +27,6 @@ const Navbar = () => {
       if (homeSection) observer.unobserve(homeSection)
     }
   }, [])
-
   useEffect(() => {
     const handleScroll = () => {
       if (forceVisible) {
@@ -53,7 +51,6 @@ const Navbar = () => {
       if (timerId.current) clearTimeout(timerId.current)
     }
   }, [forceVisible])
-
   return (
     <>
       <nav
@@ -87,5 +84,4 @@ const Navbar = () => {
     </>
   )
 }
-
 export default Navbar
