@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react"
-
 export default function ParticlesBackground() {
   const canvasRef = useRef(null);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -37,7 +35,6 @@ export default function ParticlesBackground() {
         this.draw();
       }
     }
-
     function createParticles() {
       particles = [];
       for (let i = 0; i < particleCount; i++) {
