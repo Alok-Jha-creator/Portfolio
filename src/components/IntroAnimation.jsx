@@ -9,7 +9,6 @@ export default function IntroAnimation({ onFinish }) {
 
   const [index, setIndex] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
-
   useEffect(() => {
     if (index < greetings.length - 1) {
       // ✅ Fix 1: setIndex thyo setInterval hunu parchha thiyo
@@ -20,18 +19,15 @@ export default function IntroAnimation({ onFinish }) {
       return () => clearTimeout(t);
     }
   }, [index, greetings.length]);
-
   return (
     <AnimatePresence onExitComplete={onFinish}>
       {visible && (
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white overflow-hidden"
           initial={{ y: 0 }}
-          // ✅ Fix 2: exit ma transition={} thyo — transition={{}} hunu parchha
           exit={{
             y: "-100%",
-            transition: {
-              
+            transition: {      
               ease: [0.22, 1, 0.36, 1],
             },
           }}
