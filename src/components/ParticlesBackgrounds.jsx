@@ -41,16 +41,13 @@ export default function ParticlesBackground() {
         particles.push(new Particle());
       }
     }
-
     function handleResize() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       createParticles();
     }
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
     let animationId;
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -58,18 +55,15 @@ export default function ParticlesBackground() {
       animationId = requestAnimationFrame(animate);
     }
     animate();
-
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", handleResize);
     };
   }, []); 
-
   return (
     <canvas 
     ref={canvasRef} 
-    className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-      
+    className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">  
     </canvas>
   );
 }
