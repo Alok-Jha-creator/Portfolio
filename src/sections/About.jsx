@@ -36,8 +36,6 @@ export default function About() {
             <div className="absolute inset-0 " />
             <img src={p} alt="test" />
           </motion.div>
-
-          {/* Name + Role + Bio + CTAs */}
           <div className="flex-1 flex flex-col justify-center text-center md:text-left">
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63]">
               Alok Jha
