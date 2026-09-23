@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function IntroAnimation({ onFinish }) {
   const greetings = useMemo(
-    () => ["Hello", "प्रणाम", "Namaskar", "नमस्ते 🙏"],
+    () => ["Hello", "प्रणाम", "Namaskar", "नमस्ते"],
     []
   );
   const [index, setIndex] = React.useState(0);
