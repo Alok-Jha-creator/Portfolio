@@ -6,7 +6,6 @@ export default function IntroAnimation({ onFinish }) {
     () => ["Hello", "प्रणाम", "Namaskar", "नमस्ते 🙏"],
     []
   );
-
   const [index, setIndex] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
   useEffect(() => {
@@ -34,7 +33,6 @@ export default function IntroAnimation({ onFinish }) {
         >
           <motion.h1
             key={index}
-           
             className="text-5xl md:text-7xl lg:text-8xl font-bold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
