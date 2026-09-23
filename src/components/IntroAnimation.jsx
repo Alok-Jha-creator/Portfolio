@@ -10,8 +10,7 @@ export default function IntroAnimation({ onFinish }) {
   const [visible, setVisible] = React.useState(true);
   useEffect(() => {
     if (index < greetings.length - 1) {
-      // ✅ Fix 1: setIndex thyo setInterval hunu parchha thiyo
-      const id = setInterval(() => setIndex((i) => i + 1), 1000);
+      const id = setInterval(() => setIndex((i) => i + 1), 500);
       return () => clearInterval(id);
     } else {
       const t = setTimeout(() => setVisible(false), 1000);
