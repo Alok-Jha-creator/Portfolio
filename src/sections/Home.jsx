@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
 import avatar from "../assets/avator.png";
 import { FaLinkedinIn, FaGithub, FaFacebook } from "react-icons/fa6";
 import ParticleBackground from "../components/ParticlesBackgrounds";
@@ -33,27 +33,6 @@ const makeSmall3DShadow = (depth = 8, color = "#0a3a30") => {
   return shadow;
 };
 
-/* ─── MOUSE PARALLAX HOOK ───────────────────────────────────────────── */
-const useMouseParallax = (strength = 15) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const rotateX = useSpring(useTransform(mouseY, [-300, 300], [strength, -strength]), { stiffness: 100, damping: 25 });
-  const rotateY = useSpring(useTransform(mouseX, [-300, 300], [-strength, strength]), { stiffness: 100, damping: 25 });
-
-  const handleMouseMove = (e) => {
-    const cx = window.innerWidth / 2;
-    const cy = window.innerHeight / 2;
-    mouseX.set(e.clientX - cx);
-    mouseY.set(e.clientY - cy);
-  };
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
-  return { rotateX, rotateY, handleMouseMove, handleMouseLeave };
-};
-
 /* ─── SOCIAL ICON ───────────────────────────────────────────────────── */
 const SocialIcon = ({ Icon, label, href }) => (
   <motion.a
@@ -81,8 +60,6 @@ const Home = React.forwardRef((props, ref) => {
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
-  const { rotateX, rotateY, handleMouseMove, handleMouseLeave } = useMouseParallax(8);
-
   useEffect(() => {
     const current = roles[index];
     const t = setTimeout(
@@ -105,8 +82,6 @@ const Home = React.forwardRef((props, ref) => {
       ref={ref}
       id="home"
       className="h-screen w-full relative overflow-hidden bg-black"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
     >
       <ParticleBackground />
 
@@ -137,7 +112,7 @@ const Home = React.forwardRef((props, ref) => {
         >
           <motion.div
             className="w-full lg:pr-24 mx-auto max-w-[48rem]"
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             <motion.div
               className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide min-h-[1.6em]"
@@ -327,8 +302,6 @@ const Home = React.forwardRef((props, ref) => {
         >
           <motion.div
             style={{
-              rotateX,
-              rotateY,
               transformStyle: "preserve-3d",
               position: "absolute",
               top: 0,
