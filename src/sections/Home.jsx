@@ -12,24 +12,30 @@ const socials = [
 ];
 
 /* ─── 3D TEXT SHADOW UTILITY ────────────────────────────────────────── */
+// Mobile ma depth kam garne - dherai layer le paint cost badhaucha
+const isMobileDevice = () =>
+  typeof window !== "undefined" && window.innerWidth < 768;
+
 const make3DShadow = (depth = 18, color = "#0a4a40") => {
+  const actualDepth = isMobileDevice() ? Math.min(depth, 6) : depth;
   let shadow = "";
-  for (let i = 1; i <= depth; i++) {
+  for (let i = 1; i <= actualDepth; i++) {
     shadow += `${i}px ${i}px 0px ${color}`;
-    if (i < depth) shadow += ", ";
+    if (i < actualDepth) shadow += ", ";
   }
-  shadow += `, ${depth + 2}px ${depth + 2}px 20px rgba(28,216,210,0.4)`;
-  shadow += `, ${depth + 4}px ${depth + 4}px 40px rgba(0,191,143,0.2)`;
+  shadow += `, ${actualDepth + 2}px ${actualDepth + 2}px 20px rgba(28,216,210,0.4)`;
+  shadow += `, ${actualDepth + 4}px ${actualDepth + 4}px 40px rgba(0,191,143,0.2)`;
   return shadow;
 };
 
 const makeSmall3DShadow = (depth = 8, color = "#0a3a30") => {
+  const actualDepth = isMobileDevice() ? Math.min(depth, 4) : depth;
   let shadow = "";
-  for (let i = 1; i <= depth; i++) {
+  for (let i = 1; i <= actualDepth; i++) {
     shadow += `${i}px ${i}px 0px ${color}`;
-    if (i < depth) shadow += ", ";
+    if (i < actualDepth) shadow += ", ";
   }
-  shadow += `, ${depth + 1}px ${depth + 1}px 12px rgba(28,216,210,0.35)`;
+  shadow += `, ${actualDepth + 1}px ${actualDepth + 1}px 12px rgba(28,216,210,0.35)`;
   return shadow;
 };
 
@@ -327,6 +333,7 @@ const Home = React.forwardRef((props, ref) => {
             <motion.img
               src={avatar}
               alt="Alok Jha avatar"
+              loading="lazy"
               className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none"
               style={{
                 right: "-30px",
