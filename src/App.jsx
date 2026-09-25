@@ -11,27 +11,20 @@ import IntroAnimation from "./components/IntroAnimation";
 import Skills from "./sections/Skill";
 
 export default function App() {
-  // ✅ Fix 1: React.useState -> useState (React import chhaina thiyo)
   const [introDone, setIntroDone] = useState(false);
 
   return (
-    <>
-      {/* ✅ Fix 2: JSX tag galat thiyo — < missing thiyo IntroAnimation ma */}
+    <div className="relative gradient text-white bg-black min-h-screen">
       {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
-
-      {introDone && (
-        <div className="relative gradient text-white">
-          <CustomCursior />
-          <ParticlesBackgrounds />
-          <Navbar />
-          <Home />
-          <About />
-          <Skills />
-          <Project />
-          <Contact />
-          <Footer />
-        </div>
-      )}
-    </>
+      <CustomCursior />
+      <ParticlesBackgrounds />
+      <Navbar />
+      <Home />
+      <About />
+      <Skills />
+      <Project />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
