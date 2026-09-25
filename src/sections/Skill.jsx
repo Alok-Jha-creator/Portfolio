@@ -92,9 +92,9 @@ export default function Skills() {
     >
       {/* Neon blobs — same as Home/About */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-[-60px] w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[140px] animate-pulse" />
-        <div className="absolute bottom-0 left-[-40px] w-[360px] h-[360px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-15 blur-[130px] animate-pulse delay-500" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] h-[260px] rounded-full bg-gradient-to-r from-[#00bf8f] to-[#1CD8D2] opacity-8 blur-[110px]" />
+        <div className="absolute top-0 right-[-60px] w-[40px] h-[40px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[10px] animate-pulse" />
+        <div className="absolute bottom-0 left-[-40px] w-[30px] h-[30px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-15 blur-[10px] animate-pulse delay-500" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] h-[20px] rounded-full bg-gradient-to-r from-[#00bf8f] to-[#1CD8D2] opacity-8 blur-[10px]" />
       </div>
 
       <div className="relative z-10 w-full flex flex-col items-center gap-14 py-24">

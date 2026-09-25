@@ -223,8 +223,8 @@ export default function Projects() {
     >
       {/* Neon blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-[-60px] w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[140px] animate-pulse" />
-        <div className="absolute bottom-10 right-[-40px] w-[360px] h-[360px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-15 blur-[130px] animate-pulse delay-500" />
+        <div className="absolute top-10 left-[-60px] w-[40px] h-[40px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[10px] animate-pulse" />
+        <div className="absolute bottom-10 right-[-40px] w-[30px] h-[30px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-15 blur-[10px] animate-pulse delay-500" />
       </div>
 
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 md:px-10 lg:px-12 py-24 flex flex-col gap-12">

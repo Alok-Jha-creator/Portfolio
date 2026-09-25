@@ -10,9 +10,9 @@ export default function About() {
     >
       {/* Layered neon background accents */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-10 -left-10 w-[360px] h-[360px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-20 blur-[120px] animate-pulse" />
-        <div className="absolute bottom-0 right-10 w-[420px] h-[420px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[140px] animate-pulse delay-300" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 w-[220px] h-[220px] rounded-full bg-gradient-to-r from-[#00bf8f] to-[#1CD8D2] opacity-10 blur-[100px]" />
+        <div className="absolute -top-10 -left-10 w-[30px] h-[30px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-20 blur-[10px] animate-pulse" />
+        <div className="absolute bottom-0 right-10 w-[40px] h-[40px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[10px] animate-pulse delay-300" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 w-[20px] h-[20px] rounded-full bg-gradient-to-r from-[#00bf8f] to-[#1CD8D2] opacity-10 blur-[10px]" />
       </div>
 
       {/* Content container */}

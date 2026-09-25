@@ -9,6 +9,8 @@ const Navbar = () => {
   const [forceVisible, setForceVisible] = useState(false)
   const lastScrollY = useRef(0)
   const timerId = useRef(null)
+  const tickingRef = useRef(false) 
+
   useEffect(() => {
     const homeSection = document.querySelector("#Home")
     const observer = new IntersectionObserver(
@@ -27,10 +29,12 @@ const Navbar = () => {
       if (homeSection) observer.unobserve(homeSection)
     }
   }, [])
+
   useEffect(() => {
-    const handleScroll = () => {
+    const updateScrollState = () => {
       if (forceVisible) {
         setVisible(true)
+        tickingRef.current = false
         return
       }
       const currentScrollY = window.scrollY
@@ -44,13 +48,25 @@ const Navbar = () => {
         }, 3000)
       }
       lastScrollY.current = currentScrollY
+      tickingRef.current = false
     }
+
+    const handleScroll = () => {
+      // requestAnimationFrame le ek frame ma ek pali matra setState chalauxa
+      // scroll event bar bar fire vaye pani re-render throttle huncha
+      if (!tickingRef.current) {
+        tickingRef.current = true
+        requestAnimationFrame(updateScrollState)
+      }
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
       window.removeEventListener("scroll", handleScroll)
       if (timerId.current) clearTimeout(timerId.current)
     }
   }, [forceVisible])
+
   return (
     <>
       <nav
@@ -70,6 +86,14 @@ const Navbar = () => {
           >
             <FiMenu />
           </button>
+        </div>
+        <div className="hidden lg:block">
+          <a
+            href="#contact"
+            className="bg-linear-to-r from-pink-500 to-blue-500 text-white px-5 py-2 rounded-full font-medium shadow-lg hover:opacity-90"
+          >
+            Reach Out
+          </a>
         </div>
       </nav>
       <OverlayMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
