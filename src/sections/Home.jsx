@@ -12,14 +12,12 @@ const socials = [
 ];
 
 /* ─── 3D TEXT SHADOW UTILITY ────────────────────────────────────────── */
-// Builds a layered CSS text-shadow for deep 3D extrusion effect
-const make3DShadow = (depth = 18, color = "#0a4a40", accentColor = "#1CD8D2") => {
+const make3DShadow = (depth = 18, color = "#0a4a40") => {
   let shadow = "";
   for (let i = 1; i <= depth; i++) {
     shadow += `${i}px ${i}px 0px ${color}`;
     if (i < depth) shadow += ", ";
   }
-  // final glow layer
   shadow += `, ${depth + 2}px ${depth + 2}px 20px rgba(28,216,210,0.4)`;
   shadow += `, ${depth + 4}px ${depth + 4}px 40px rgba(0,191,143,0.2)`;
   return shadow;
@@ -48,7 +46,10 @@ const useMouseParallax = (strength = 15) => {
     mouseX.set(e.clientX - cx);
     mouseY.set(e.clientY - cy);
   };
-  const handleMouseLeave = () => { mouseX.set(0); mouseY.set(0); };
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   return { rotateX, rotateY, handleMouseMove, handleMouseLeave };
 };
@@ -76,21 +77,26 @@ const SocialIcon = ({ Icon, label, href }) => (
 /* ─── MAIN ──────────────────────────────────────────────────────────── */
 const Home = React.forwardRef((props, ref) => {
   const roles = useMemo(() => ["Web Developer", "MERN Stack Developer", "Full Stack Developer"], []);
-  const [index, setIndex]       = useState(0);
+  const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
   const { rotateX, rotateY, handleMouseMove, handleMouseLeave } = useMouseParallax(8);
 
-  /* typing */
   useEffect(() => {
     const current = roles[index];
-    const t = setTimeout(() => {
-      if (!deleting && subIndex < current.length)        setSubIndex(v => v + 1);
-      else if (!deleting && subIndex === current.length) setTimeout(() => setDeleting(true), 1200);
-      else if (deleting && subIndex > 0)                 setSubIndex(v => v - 1);
-      else { setDeleting(false); setIndex(p => (p + 1) % roles.length); }
-    }, deleting ? 40 : 60);
+    const t = setTimeout(
+      () => {
+        if (!deleting && subIndex < current.length) setSubIndex((v) => v + 1);
+        else if (!deleting && subIndex === current.length) setTimeout(() => setDeleting(true), 1200);
+        else if (deleting && subIndex > 0) setSubIndex((v) => v - 1);
+        else {
+          setDeleting(false);
+          setIndex((p) => (p + 1) % roles.length);
+        }
+      },
+      deleting ? 40 : 60
+    );
     return () => clearTimeout(t);
   }, [subIndex, deleting, index, roles]);
 
@@ -104,28 +110,24 @@ const Home = React.forwardRef((props, ref) => {
     >
       <ParticleBackground />
 
-      {/* gradient blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           className="absolute -top-32 -left-32 w-[70vw] sm:w-[50vw] md:w-[40vw]
             h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[500px] max-h-[500px]
             rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] blur-[150px]"
-          animate={{ opacity: [0.10, 0.18, 0.10], scale: [1, 1.05, 1] }}
+          animate={{ opacity: [0.1, 0.18, 0.1], scale: [1, 1.05, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute bottom-0 right-0 w-[70vw] sm:w-[50vw] md:w-[40vw]
             h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[500px] max-h-[500px]
             rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] blur-[150px]"
-          animate={{ opacity: [0.20, 0.35, 0.20], scale: [1, 1.06, 1] }}
+          animate={{ opacity: [0.2, 0.35, 0.2], scale: [1, 1.06, 1] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
       </div>
 
-      {/* ── MAIN GRID ── */}
       <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2">
-
-        {/* ── LEFT ── */}
         <motion.div
           className="flex flex-col justify-center h-full text-center lg:text-left"
           style={{ perspective: "1000px" }}
@@ -137,8 +139,6 @@ const Home = React.forwardRef((props, ref) => {
             className="w-full lg:pr-24 mx-auto max-w-[48rem]"
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           >
-
-            {/* ── TYPING ROLE — 3D small shadow ── */}
             <motion.div
               className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide min-h-[1.6em]"
               initial={{ opacity: 0, y: 16 }}
@@ -160,14 +160,12 @@ const Home = React.forwardRef((props, ref) => {
               />
             </motion.div>
 
-            {/* ── NAME — deep 3D extrusion ── */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               style={{ transformStyle: "preserve-3d", transform: "translateZ(50px)" }}
             >
-              {/* "Hello, I'm" — medium 3D */}
               <span
                 className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
                 style={{
@@ -179,7 +177,6 @@ const Home = React.forwardRef((props, ref) => {
                 Hello, I&apos;m
               </span>
 
-              {/* "Alok Jha" — deep 3D extrusion, the star */}
               <span
                 className="block text-white font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap mt-1"
                 style={{
@@ -192,7 +189,6 @@ const Home = React.forwardRef((props, ref) => {
               </span>
             </motion.h1>
 
-            {/* ── DESCRIPTION ── */}
             <motion.p
               className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 25 }}
@@ -204,22 +200,36 @@ const Home = React.forwardRef((props, ref) => {
                 textShadow: "2px 2px 6px rgba(0,0,0,0.8)",
               }}
             >
-              "I architect end-to-end digital products — from robust{" "}
-              <span style={{ color: "#1CD8D2", textShadow: "1px 1px 0 #063d2e, 2px 2px 0 #063d2e, 3px 3px 8px rgba(28,216,210,0.4)" }}>
+              I architect end-to-end digital products, from robust{" "}
+              <span
+                style={{
+                  color: "#1CD8D2",
+                  textShadow: "1px 1px 0 #063d2e, 2px 2px 0 #063d2e, 3px 3px 8px rgba(28,216,210,0.4)",
+                }}
+              >
                 Node.js APIs
               </span>{" "}
               and{" "}
-              <span style={{ color: "#00bf8f", textShadow: "1px 1px 0 #063d2e, 2px 2px 0 #063d2e, 3px 3px 8px rgba(0,191,143,0.4)" }}>
+              <span
+                style={{
+                  color: "#00bf8f",
+                  textShadow: "1px 1px 0 #063d2e, 2px 2px 0 #063d2e, 3px 3px 8px rgba(0,191,143,0.4)",
+                }}
+              >
                 MongoDB schemas
               </span>{" "}
               to pixel-perfect{" "}
-              <span style={{ color: "#1CD8D2", textShadow: "1px 1px 0 #063d2e, 2px 2px 0 #063d2e, 3px 3px 8px rgba(28,216,210,0.4)" }}>
+              <span
+                style={{
+                  color: "#1CD8D2",
+                  textShadow: "1px 1px 0 #063d2e, 2px 2px 0 #063d2e, 3px 3px 8px rgba(28,216,210,0.4)",
+                }}
+              >
                 React interfaces
               </span>{" "}
-              that users love."
+              that users love.
             </motion.p>
 
-            {/* ── BUTTONS — 3D depth ── */}
             <motion.div
               className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-5"
               initial={{ opacity: 0, y: 24 }}
@@ -227,7 +237,6 @@ const Home = React.forwardRef((props, ref) => {
               transition={{ delay: 0.8, duration: 0.8 }}
               style={{ transform: "translateZ(40px)", transformStyle: "preserve-3d" }}
             >
-              {/* Primary */}
               <motion.a
                 href="#projects"
                 className="relative inline-flex items-center gap-2 px-7 py-3 rounded-full
@@ -250,7 +259,7 @@ const Home = React.forwardRef((props, ref) => {
                 <motion.span
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12"
                   initial={{ x: "-110%" }}
-                  whileHover={{ x: "210%" }}
+                  whileHover={{ x: "100%" }}
                   transition={{ duration: 0.5 }}
                 />
                 <span className="relative z-10">View My Work</span>
@@ -258,10 +267,11 @@ const Home = React.forwardRef((props, ref) => {
                   className="relative z-10"
                   animate={{ x: [0, 3, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
-                >→</motion.span>
+                >
+                  →
+                </motion.span>
               </motion.a>
 
-              {/* Secondary */}
               <motion.a
                 href="/Resume.pdf"
                 download
@@ -288,11 +298,12 @@ const Home = React.forwardRef((props, ref) => {
                   className="relative z-10 text-sm"
                   animate={{ y: [0, 2, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
-                >↓</motion.span>
+                >
+                  ↓
+                </motion.span>
               </motion.a>
             </motion.div>
 
-            {/* ── SOCIALS ── */}
             <motion.div
               className="mt-10 flex gap-5 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
@@ -300,12 +311,13 @@ const Home = React.forwardRef((props, ref) => {
               transition={{ delay: 1.0, duration: 0.7 }}
               style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }}
             >
-              {socials.map(s => <SocialIcon key={s.label} {...s} />)}
+              {socials.map((s) => (
+                <SocialIcon key={s.label} {...s} />
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>
 
-        {/* ── RIGHT — AVATAR with 3D parallax tilt ── */}
         <motion.div
           className="relative hidden lg:flex items-center justify-center"
           style={{ perspective: "1000px" }}
@@ -319,10 +331,12 @@ const Home = React.forwardRef((props, ref) => {
               rotateY,
               transformStyle: "preserve-3d",
               position: "absolute",
-              top: 0, left: 0, right: 0, bottom: 0,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
             }}
           >
-            {/* glow */}
             <div
               className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
               style={{
@@ -337,7 +351,6 @@ const Home = React.forwardRef((props, ref) => {
               }}
             />
 
-            {/* avatar image */}
             <motion.img
               src={avatar}
               alt="Alok Jha avatar"
@@ -355,7 +368,6 @@ const Home = React.forwardRef((props, ref) => {
             />
           </motion.div>
         </motion.div>
-
       </div>
     </section>
   );
