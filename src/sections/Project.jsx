@@ -59,6 +59,19 @@ const projects = [
     accent: "#a78bfa",
     size: "small",
   },
+  {
+    id: 5,
+    title: "Snapcart",
+    subtitle: "Full-Stack Grocery App",
+    description:
+      "A full-stack grocery delivery platform with separate dashboards for users, admins and delivery partners. Features Google and email login, cart and checkout, eSewa online payments, order management, and delivery request broadcasting. Built with Next.js, MongoDB, Redux and Socket.io.",
+    image: image1,
+    tags: ["Next.js", "MongoDB", "NextAuth", "Redux", "Socket.io", "Cloudinary", "Tailwind CSS"],
+    github: "https://github.com/Alok-Jha-creator/snapcart",
+    live: "",
+    accent: "#a78bfa",
+    size: "small",
+  },
 ];
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
