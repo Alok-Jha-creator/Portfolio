@@ -4,6 +4,7 @@ import online from "../assets/online.png";
 import image1 from "../assets/image.png";
 import room from "../assets/room.png";
 import port from "../assets/port.png";
+import pro from "../assets/pro.png"
 
 
 const projects = [
@@ -65,7 +66,7 @@ const projects = [
     subtitle: "Full-Stack Grocery App",
     description:
       "A full-stack grocery delivery platform with separate dashboards for users, admins and delivery partners. Features Google and email login, cart and checkout, eSewa online payments, order management, and delivery request broadcasting. Built with Next.js, MongoDB, Redux and Socket.io.",
-    image: image1,
+    image: pro,
     tags: ["Next.js", "MongoDB", "NextAuth", "Redux", "Socket.io", "Cloudinary", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator/snapcart",
     live: "https://snapcart-pied-gamma.vercel.app/",
