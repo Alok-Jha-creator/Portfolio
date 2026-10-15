@@ -68,7 +68,7 @@ const projects = [
     image: image1,
     tags: ["Next.js", "MongoDB", "NextAuth", "Redux", "Socket.io", "Cloudinary", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator/snapcart",
-    live: "",
+    live: "https://snapcart-pied-gamma.vercel.app/",
     accent: "#a78bfa",
     size: "small",
   },
