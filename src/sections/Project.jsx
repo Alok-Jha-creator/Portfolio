@@ -4,86 +4,87 @@ import online from "../assets/online.png";
 import image1 from "../assets/image.png";
 import room from "../assets/room.png";
 import port from "../assets/port.png";
-import pro from "../assets/pro.png"
+import pro from "../assets/pro.png";
 
-
+// NOTE: "live" rakhnu bhaye matra real link halnu. Link chhaina bhane line hataidinu —
+// tab "Live Demo" button dekhindaina.
 const projects = [
   {
     id: 1,
-    title: "Room Finder App",
-    subtitle: "Full Stack Web App",
+    title: "Snapcart",
+    subtitle: "Full-Stack Grocery App",
     description:
-      "A modern e-commerce platform with product listing, cart management, secure JWT authentication, and real-time order tracking. Built with React, Node.js, Express, and MongoDB.",
-    image:room,
-    tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
-    github: "https://github.com/Alok-Jha-creator",
-    live: "https://yoursite.netlify.app",
+      "A full-stack grocery delivery platform with separate dashboards for users, admins and delivery partners. Features Google and email login, cart and checkout, eSewa online payments, order management, and delivery request broadcasting.",
+    image: pro,
+    tags: ["Next.js", "MongoDB", "NextAuth", "Redux", "Socket.io", "Cloudinary", "Tailwind CSS"],
+    github: "https://github.com/Alok-Jha-creator/snapcart",
+    live: "https://snapcart-pied-gamma.vercel.app/",
     accent: "#1CD8D2",
-    size: "small", 
+    size: "small",
   },
   {
     id: 2,
-    title: "Portfolio Website",
-    subtitle: "Frontend Project",
+    title: "Room Finder App",
+    subtitle: "Full Stack Web App",
     description:
-      "Personal developer portfolio with smooth animations, particle backgrounds, and fully responsive design using React, Tailwind CSS, and Framer Motion.",
-    image: port,
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
+      "A room rental platform where owners list rooms with photos and prices, and tenants search, filter and contact owners directly. Built with secure JWT authentication.",
+    image: room,
+    tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     github: "https://github.com/Alok-Jha-creator",
-    live: "https://github.com/Alok-Jha-creator",
+    // live: "https://your-room-finder-link.com",
     accent: "#00bf9f",
     size: "small",
   },
   {
     id: 3,
-    title: "Online voting system",
+    title: "Online Voting System",
     subtitle: "Full Stack App",
     description:
-      "A full-featured task management app with drag-and-drop, real-time updates, user auth, and deadline reminders. Built with Next.js, Firebase, and Context API.",
+      "A secure online voting system with voter registration, one-person-one-vote verification, candidate management and live result counting for admins.",
     image: online,
-    tags: ["Next.js", "Firebase", "Context API", "Tailwind CSS"],
+    tags: ["React", "Node.js", "MongoDB"], // real tags haru yaha milaunu
     github: "https://github.com/Alok-Jha-creator",
-    live: "https://yoursite.netlify.app",
+    // live: "https://your-voting-link.com",
     accent: "#a78bfa",
     size: "small",
   },
   {
     id: 4,
-    title: "Tech booking system",
-    subtitle: "FullStack App",
+    title: "Tech Booking System",
+    subtitle: "Full Stack App",
     description:
-      "A full-featured task management app with drag-and-drop, real-time updates, user auth, and deadline reminders. Built with Next.js, Firebase, and Context API.",
+      "A booking platform where users can browse technicians or services, pick a time slot, and manage their bookings, with an admin panel to approve and track requests.",
     image: image1,
-    tags: ["React.js", "Firebase", "Context API", "Tailwind CSS"],
+    tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"], // real tags haru yaha milaunu
     github: "https://github.com/Alok-Jha-creator",
-     //live: "https://yoursite.netlify.app",
-    accent: "#a78bfa",
+    // live: "https://your-booking-link.com",
+    accent: "#f59e0b",
     size: "small",
   },
   {
     id: 5,
-    title: "Snapcart",
-    subtitle: "Full-Stack Grocery App",
+    title: "Portfolio Website",
+    subtitle: "Frontend Project",
     description:
-      "A full-stack grocery delivery platform with separate dashboards for users, admins and delivery partners. Features Google and email login, cart and checkout, eSewa online payments, order management, and delivery request broadcasting. Built with Next.js, MongoDB, Redux and Socket.io.",
-    image: pro,
-    tags: ["Next.js", "MongoDB", "NextAuth", "Redux", "Socket.io", "Cloudinary", "Tailwind CSS"],
-    github: "https://github.com/Alok-Jha-creator/snapcart",
-    live: "https://snapcart-pied-gamma.vercel.app/",
-    accent: "#a78bfa",
+      "Personal developer portfolio with smooth animations, particle backgrounds, and a fully responsive design using React, Tailwind CSS, and Framer Motion.",
+    image: port,
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/Alok-Jha-creator",
+    // live: "https://your-portfolio-link.com",
+    accent: "#38bdf8",
     size: "small",
   },
 ];
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 const GithubIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
   </svg>
 );
 
 const ExternalIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2">
+  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2" aria-hidden="true">
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" strokeLinecap="round" strokeLinejoin="round" />
     <polyline points="15 3 21 3 21 9" strokeLinecap="round" strokeLinejoin="round" />
     <line x1="10" y1="14" x2="21" y2="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -94,18 +95,31 @@ const ExternalIcon = () => (
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
 
-  const isLarge = project.size === "small" ? false : true;
+  const isLarge = project.size === "large";
+
+  // Mouse ma hover, phone/touch ma tap garera toggle
+  const handlePointerEnter = (e) => {
+    if (e.pointerType === "mouse") setHovered(true);
+  };
+  const handlePointerLeave = (e) => {
+    if (e.pointerType === "mouse") setHovered(false);
+  };
+  const handleClick = (e) => {
+    const type = e.nativeEvent?.pointerType;
+    if (type && type !== "mouse") setHovered((h) => !h);
+  };
 
   return (
     <motion.div
       className={`relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm cursor-pointer group
-        ${isLarge ? "md:col-span-2 md:row-span-2" : "col-span-1"}`}
+        ${isLarge ? "md:col-span-2" : "col-span-1"}`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onClick={handleClick}
       style={{
         boxShadow: hovered ? `0 0 30px ${project.accent}22` : "none",
         borderColor: hovered ? `${project.accent}44` : "rgba(255,255,255,0.1)",
@@ -117,26 +131,27 @@ function ProjectCard({ project, index }) {
         <motion.img
           src={project.image}
           alt={project.title}
+          loading="lazy"
           className="w-full h-full object-cover"
           animate={{ scale: hovered ? 1.08 : 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
       </div>
 
-      {/* ── Overlay on hover ── */}
+      {/* ── Overlay on hover / tap ── */}
       <AnimatePresence>
         {hovered && (
           <motion.div
             className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6"
             style={{
-              background: `linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.15) 100%)`,
+              background:
+                "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.15) 100%)",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Subtitle */}
             <motion.p
               className="text-xs font-semibold tracking-widest uppercase mb-1"
               style={{ color: project.accent }}
@@ -147,7 +162,6 @@ function ProjectCard({ project, index }) {
               {project.subtitle}
             </motion.p>
 
-            {/* Title */}
             <motion.h3
               className="text-xl sm:text-2xl font-extrabold text-white mb-2 leading-tight"
               initial={{ y: 16, opacity: 0 }}
@@ -157,7 +171,6 @@ function ProjectCard({ project, index }) {
               {project.title}
             </motion.h3>
 
-            {/* Description */}
             <motion.p
               className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3"
               initial={{ y: 16, opacity: 0 }}
@@ -167,7 +180,6 @@ function ProjectCard({ project, index }) {
               {project.description}
             </motion.p>
 
-            {/* Tags */}
             <motion.div
               className="flex flex-wrap gap-2 mb-4"
               initial={{ y: 16, opacity: 0 }}
@@ -186,7 +198,7 @@ function ProjectCard({ project, index }) {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex gap-3"
+              className="flex flex-wrap gap-3"
               initial={{ y: 16, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.22 }}
@@ -200,7 +212,19 @@ function ProjectCard({ project, index }) {
               >
                 <GithubIcon /> GitHub
               </a>
-             
+
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-black hover:opacity-90 transition"
+                  style={{ backgroundColor: project.accent }}
+                >
+                  <ExternalIcon /> Live Demo
+                </a>
+              )}
             </motion.div>
           </motion.div>
         )}
@@ -208,7 +232,7 @@ function ProjectCard({ project, index }) {
 
       {/* ── Always-visible bottom label (non-hover state) ── */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 px-5 py-3 flex items-center justify-between"
+        className="absolute bottom-0 left-0 right-0 px-5 py-3 flex items-center justify-between pointer-events-none"
         style={{
           background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
         }}
@@ -235,15 +259,12 @@ export default function Projects() {
       className="min-h-screen w-full flex items-center justify-center relative bg-black text-white overflow-hidden"
       aria-label="Projects"
     >
-      {/* Neon blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-[-60px] w-[40px] h-[40px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[10px] animate-pulse" />
-        <div className="absolute bottom-10 right-[-40px] w-[30px] h-[30px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-15 blur-[10px] animate-pulse delay-500" />
+        <div className="absolute top-10 left-[-60px] w-[200px] h-[200px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[80px] animate-pulse" />
+        <div className="absolute bottom-10 right-[-40px] w-[240px] h-[240px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-15 blur-[90px] animate-pulse" />
       </div>
 
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 md:px-10 lg:px-12 py-24 flex flex-col gap-12">
-
-        {/* Heading */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 24 }}
@@ -259,13 +280,13 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-5 auto-rows-[280px]">
+        {/* Snapcart (2 cols) + 1 small  →  next row: 3 small  = perfectly filled grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[280px]">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
 
-        {/* View All button */}
         <motion.div
           className="flex justify-center mt-2"
           initial={{ opacity: 0, y: 16 }}
@@ -283,7 +304,6 @@ export default function Projects() {
             View All on GitHub
           </a>
         </motion.div>
-
       </div>
     </section>
   );
